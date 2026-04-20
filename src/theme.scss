@@ -1,0 +1,42 @@
+$black_01: #171921;
+$black_01_50: #17192180;
+$black_01_25: #17192140;
+
+$white_01: #EEF0FA;
+$white_02: #B3B3B3;
+
+$gray_01: #7D7D7D;
+
+$blue_01: #749AED;
+$blue_01_25: #749AED40;
+
+$green_01: #61B04D;
+
+$cyan_01: #69D7E1;
+$cyan_01_50: #69D7E180;
+
+$purple_01: #BD94FF;
+
+$orange_01: #FF873C;
+
+$red_01: #F54A4A;
+
+$f0: clamp(32px, 4vw + 0.5rem, 64px);
+$f1: clamp(16px, 2.5vw + 0.5rem, 32px);
+$f2: clamp(24px, 2vw + 0.5rem, 28px);
+$f3: clamp(18px, 1.5vw + 0.5rem, 24px);
+$f4: clamp(14px, 1vw + 0.5rem, 18px);
+$f5: clamp(12px, 0.75vw + 0.5rem, 14px);
+$f6: clamp(11px, 0.5vw + 0.5rem, 12px);
+$f7: clamp(8px, 0.25vw + 0.5rem, 11px);
+
+$heightWithNav: calc(100vh - 84px);
+
+@font-face {
+  font-family: "Exo";
+  src: url("/assets/fonts/Exo-VariableFont_wght.ttf") format('truetype');
+  font-weight: 100 900;
+  font-stretch: 75% 125%;
+  font-style: normal;
+  font-display: swap;
+}

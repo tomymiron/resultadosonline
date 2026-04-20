@@ -1,0 +1,103 @@
+@use "../../theme.scss" as theme;
+
+.resultTable-empty {
+  padding: 24px 16px;
+  color: theme.$black_01_50;
+  font-size: theme.$f5;
+  font-weight: 500;
+  text-align: center;
+  background-color: theme.$white_01;
+  border: 2px dashed theme.$black_01_25;
+}
+
+.resultTable-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background-color: theme.$white_01;
+
+  &::-webkit-scrollbar { height: 6px; }
+  &::-webkit-scrollbar-track { background: theme.$white_01; }
+  &::-webkit-scrollbar-thumb {
+    background-color: theme.$orange_01;
+    &:hover { background-color: theme.$purple_01; }
+  }
+
+  .resultTable {
+    width: 100%;
+    min-width: fit-content;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: theme.$f5;
+
+    thead {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background-color: theme.$white_01;
+
+      tr { border-bottom: 2px solid theme.$black_01; }
+
+      th {
+        color: theme.$black_01;
+        font-size: theme.$f5;
+        font-weight: 900;
+        padding: 10px 12px;
+        background-color: theme.$white_01;
+        border-bottom: 2px solid theme.$black_01;
+        white-space: nowrap;
+
+        &.left { text-align: left; }
+        &.right { text-align: right; }
+        &.center { text-align: center; }
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid theme.$gray_01;
+        transition: background-color 0.15s ease;
+
+        &:hover { background-color: rgba(theme.$orange_01, 0.06); }
+        &.clickable { cursor: pointer; }
+        &.clickable:hover { background-color: rgba(theme.$purple_01, 0.12); }
+        &.highlighted { background-color: theme.$purple_01; }
+        &:last-child { border-bottom: none; }
+      }
+
+      td {
+        padding: 10px 12px;
+        color: theme.$black_01;
+        vertical-align: middle;
+        font-variant-numeric: tabular-nums;
+
+        &.left { text-align: left; }
+        &.right { text-align: right; }
+        &.center { text-align: center; }
+        &.bold { font-weight: 900; }
+        &.athlete { font-weight: 700; white-space: nowrap; }
+        &.club { font-weight: 600; }
+        &.danger { color: theme.$red_01; font-weight: 700; }
+        &.cell-clickable {
+          cursor: pointer;
+          text-decoration: underline;
+          text-decoration-color: theme.$black_01_25;
+          text-underline-offset: 3px;
+
+          &:hover {
+            color: theme.$purple_01;
+            text-decoration-color: theme.$purple_01;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .resultTable {
+      font-size: theme.$f6;
+      thead th { padding: 8px 8px; font-size: theme.$f6; }
+      tbody td { padding: 8px 8px; }
+    }
+  }
+}

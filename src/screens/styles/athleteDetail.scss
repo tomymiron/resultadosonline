@@ -1,0 +1,130 @@
+@use "../../theme.scss" as theme;
+
+#AtletaDetail, #ClubDetail {
+  background-color: theme.$white_01;
+  letter-spacing: normal;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  min-height: 100vh;
+  display: flex;
+  width: 100vw;
+  top: 0;
+
+  .loading {
+    padding: 48px;
+    font-size: theme.$f4;
+    color: theme.$black_01;
+  }
+
+  nav {
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    padding: 24px clamp(12px, 3vw, 40px) 0;
+    display: flex;
+    width: 100%;
+    max-width: 1440px;
+    box-sizing: border-box;
+
+    #backButton {
+      background-color: theme.$purple_01;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      display: flex;
+      width: 48px;
+      height: 48px;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background-color 0.15s ease;
+
+      &:hover { background-color: #a67eea; }
+    }
+  }
+
+  main {
+    padding: 20px clamp(12px, 3vw, 40px) 64px;
+    flex-direction: column;
+    overflow-y: auto;
+    display: flex;
+    width: 100%;
+    margin: 0;
+    gap: 24px;
+    max-width: 1440px;
+    box-sizing: border-box;
+
+    section {
+      width: 100%;
+      flex-direction: column;
+      display: flex;
+      gap: 24px;
+
+      #meetHeader {
+        flex-direction: column;
+        display: flex;
+        gap: 8px;
+
+        #meetTimeLeft {
+          color: theme.$black_01;
+          font-size: theme.$f3;
+          font-weight: 700;
+        }
+
+        #meetTitleRow {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+
+          #atletaName, #clubName {
+            font-size: calc(theme.$f1 + 6px);
+            color: theme.$black_01;
+            font-weight: 900;
+            margin: 0;
+            line-height: 1;
+          }
+        }
+
+        .atletaBadges, .clubBadges {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 6px;
+          margin-top: 8px;
+
+          .badge {
+            background-color: theme.$white_01;
+            border: 2px solid theme.$black_01;
+            color: theme.$black_01;
+            font-size: theme.$f5;
+            font-weight: 700;
+            padding: 8px 14px;
+
+            &.gold { background-color: theme.$purple_01; border-color: theme.$black_01; }
+            &.pend { background-color: theme.$orange_01; border-color: theme.$black_01; }
+          }
+
+          .clubLink {
+            background-color: theme.$black_01;
+            color: theme.$cyan_01;
+            border: 2px solid theme.$black_01;
+            font-size: theme.$f5;
+            font-weight: 700;
+            padding: 8px 14px;
+            cursor: pointer;
+            font-family: inherit;
+
+            &:hover { background-color: theme.$cyan_01; color: theme.$black_01; }
+          }
+        }
+      }
+
+      h3 {
+        color: theme.$black_01;
+        font-size: theme.$f2;
+        font-weight: 900;
+        margin-top: 16px;
+      }
+    }
+  }
+}

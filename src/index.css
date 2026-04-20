@@ -1,0 +1,90 @@
+:root {
+  font-family: "Exo", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color-scheme: light dark;
+  font-synthesis: none;
+  letter-spacing: 0;
+  line-height: 100%;
+  font-weight: 400;
+  color: #171921;
+  padding: 0;
+}
+
+* { box-sizing: border-box; }
+button { outline: none; border: none; }
+
+html {
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+html::-webkit-scrollbar { display: none; }
+body {
+  margin: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+body::-webkit-scrollbar { display: none; }
+* { scrollbar-width: none; -ms-overflow-style: none; }
+*::-webkit-scrollbar { display: none; }
+
+main { display: block; }
+
+h1, h2 { line-height: 100%; font-size: 2em; margin: 0; }
+h3, h4, h5, p { line-height: 100%; margin: 0; }
+
+a {
+  font-weight: 500;
+  color: inherit;
+  text-decoration: inherit;
+  margin: 0;
+  background-color: transparent;
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.globalToast {
+  position: fixed;
+  top: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  padding: 12px 20px;
+  font-weight: 700;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid #171921;
+  box-shadow: 4px 4px 0 #171921;
+  animation: toastIn 0.22s ease-out;
+  max-width: calc(100vw - 32px);
+}
+.globalToast .ico {
+  font-weight: 900;
+  font-size: 17px;
+  width: 22px;
+  height: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #171921;
+  color: #EEF0FA;
+}
+.globalToast-updated { background: #BD94FF; color: #171921; }
+.globalToast-unchanged { background: #EEF0FA; color: #171921; }
+.globalToast-error { background: #F54A4A; color: #EEF0FA; }
+.globalToast-error .ico { background: #EEF0FA; color: #F54A4A; }
+
+@keyframes toastIn {
+  from { opacity: 0; transform: translate(-50%, -12px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
